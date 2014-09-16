@@ -6,7 +6,7 @@
 		<artifactId>test-jpa</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>mod01-hibernate-hsqldb</artifactId>
+	<artifactId>mod01-hibernate</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>org.hsqldb</groupId>

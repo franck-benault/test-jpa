@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-	<module>mod01-hibernate-hsqldb</module>
+	<module>mod01-hibernate</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
