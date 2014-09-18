@@ -26,7 +26,6 @@ public class StudentManagerH2Test extends AbstractTester {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	@Ignore
 	@Test
 	public void testCreateStudent() throws ClassNotFoundException, SQLException {
 

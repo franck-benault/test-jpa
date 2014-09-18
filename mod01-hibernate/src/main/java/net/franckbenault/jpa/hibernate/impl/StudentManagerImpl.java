@@ -21,8 +21,10 @@ public class StudentManagerImpl implements StudentManager {
 
 	@Override
 	public Student createStudent(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+	    em.getTransaction().begin();
+	    em.persist(student);
+	    em.getTransaction().commit();
+	    return student;
 	}
 
 	@Override

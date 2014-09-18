@@ -27,7 +27,6 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 	}
 
 
-	@Ignore
 	@Test
 	public void testCreateStudent() throws ClassNotFoundException, SQLException {
 
