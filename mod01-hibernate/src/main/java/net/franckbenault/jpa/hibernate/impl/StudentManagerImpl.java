@@ -29,7 +29,10 @@ public class StudentManagerImpl implements StudentManager {
 
 	@Override
 	public void removeStudent(Student student) {
-		// TODO Auto-generated method stub
+	    em.getTransaction().begin();
+	    student = em.find(Student.class,student.getId());
+	    em.remove(student);
+	    em.getTransaction().commit();
 		
 	}
 

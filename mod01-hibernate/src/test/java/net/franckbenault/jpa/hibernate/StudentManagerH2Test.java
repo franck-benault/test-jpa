@@ -36,7 +36,6 @@ public class StudentManagerH2Test extends AbstractTester {
 		assertEquals(countBefore + 1, countAfter);
 	}
 
-	@Ignore
 	@Test
 	public void testRemoveStudent() throws ClassNotFoundException, SQLException {
 		Student student = studentManager.createStudent(new Student());

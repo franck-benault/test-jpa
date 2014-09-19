@@ -37,7 +37,7 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 		assertEquals(countBefore + 1, countAfter);
 	}
 
-	@Ignore
+
 	@Test
 	public void testRemoveStudent() throws ClassNotFoundException, SQLException {
 		
