@@ -51,7 +51,7 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 		assertEquals(countBefore, countAfter+1);
 	}
 	
-	@Ignore
+
 	@Test
 	public void testfindAllStudents() throws ClassNotFoundException, SQLException {
 		int countBefore = countStudentsJDBC(DB_NAME);

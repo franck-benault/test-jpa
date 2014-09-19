@@ -35,8 +35,8 @@ public class StudentManagerImpl implements StudentManager {
 
 	@Override
 	public List<Student> findAllStudents() {
-		// TODO Auto-generated method stub
-		return null;
+	    return em.createQuery(
+	            "select s from Student s", Student.class).getResultList();
 	}
 
 }
