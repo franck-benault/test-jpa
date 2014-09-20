@@ -5,16 +5,20 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 @Entity
 public class Student {
   @Id
   private long id = System.currentTimeMillis();
 
-  @Basic
+  //the annotation basic is not needed for Hibernate and EclipseLink
+  //@Basic
   private String name;
 
-  @Basic
+  //hibernate could accept @Basic here
+  //@Basic
+  @Temporal(javax.persistence.TemporalType.TIMESTAMP)  
   private Date dateOfBirth = new Date();
 
   public Date getDateOfBirth() {

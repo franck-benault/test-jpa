@@ -12,7 +12,8 @@ public class Student {
   @Id
   private long id = System.currentTimeMillis();
 
-  @Basic
+  //the annotation basic is not needed for Hibernate and EclipseLink
+  //@Basic
   private String name;
 
   @Temporal(javax.persistence.TemporalType.TIMESTAMP)
