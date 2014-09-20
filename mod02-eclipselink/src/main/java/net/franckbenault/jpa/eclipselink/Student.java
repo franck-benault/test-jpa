@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 @Entity
 public class Student {
@@ -14,7 +15,7 @@ public class Student {
   @Basic
   private String name;
 
-  @Basic
+  @Temporal(javax.persistence.TemporalType.TIMESTAMP)
   private Date dateOfBirth = new Date();
 
   public Date getDateOfBirth() {
