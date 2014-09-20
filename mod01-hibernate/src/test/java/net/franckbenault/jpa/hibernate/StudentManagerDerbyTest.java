@@ -11,7 +11,6 @@ import net.franckbenault.jpa.hibernate.impl.StudentManagerImpl;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.Ignore;
 
 public class StudentManagerDerbyTest extends AbstractTester  {
 

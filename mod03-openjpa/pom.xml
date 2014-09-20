@@ -12,7 +12,6 @@
 			<groupId>org.apache.openjpa</groupId>
 			<artifactId>openjpa-persistence</artifactId>
 			<scope>compile</scope>
-			<version>2.3.0</version>
 		</dependency>
 	</dependencies>
 
