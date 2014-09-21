@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CustomerManager {
 
-	Customer createStudent(Customer customer);
+	Customer createCustomer(Customer customer);
 	
-	List<Customer> findAllCustomer();
+	List<Customer> findAllCustomers();
 }
