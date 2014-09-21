@@ -19,6 +19,7 @@
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
 		 	<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true"/>
 		 	<property name="eclipselink.ddl-generation" value="create-tables"/>
+		 	<property name="eclipselink.target-database" value="Derby"/>
 		</properties>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	</persistence-unit>
