@@ -29,10 +29,21 @@ public class CustomerManagerH2Test extends AbstractTester {
 	public void testCreateCustomers() throws ClassNotFoundException, SQLException {
 
 		int countBefore = countStudentsJDBC(DB_NAME);
-		customerManager.createCustomer(new Customer("John", "Smith"));
+		Customer c= customerManager.createCustomer(new Customer("John", "Smith"));
+		assertNotNull(c);
+		
 		int countAfter = countStudentsJDBC(DB_NAME);
 
 		assertEquals(countBefore + 1, countAfter);
+	}
+	
+	@Test
+	public void testCreateCustomers_withException() throws ClassNotFoundException, SQLException {
+
+		Customer c = customerManager.createCustomer(new Customer("William", "Smouth"));
+		assertNotNull(c);
+		c = customerManager.createCustomer(new Customer("William", "Smouth"));
+		assertNull(c);
 	}
 
 	

@@ -2,6 +2,7 @@ package net.franckbenault.jpa.hibernate;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,6 +11,7 @@ import net.franckbenault.jpa.hibernate.impl.CustomerManagerImpl;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CustomerManagerDerbyTest extends AbstractTester  {
@@ -31,10 +33,22 @@ public class CustomerManagerDerbyTest extends AbstractTester  {
 	public void testCreateCustomers() throws ClassNotFoundException, SQLException {
 
 		int countBefore = countStudentsJDBC(DB_NAME);
-		customerManager.createCustomer(new Customer("John", "Smith"));
+		Customer c= customerManager.createCustomer(new Customer("John", "Smith"));
+		assertNotNull(c);
+		
 		int countAfter = countStudentsJDBC(DB_NAME);
 
 		assertEquals(countBefore + 1, countAfter);
+	}
+	
+
+	@Test
+	public void testCreateCustomers_withException() throws ClassNotFoundException, SQLException {
+
+		Customer c = customerManager.createCustomer(new Customer("William", "Smouth"));
+		assertNotNull(c);
+		c = customerManager.createCustomer(new Customer("William", "Smouth"));
+		assertNull(c);
 	}
 
 	

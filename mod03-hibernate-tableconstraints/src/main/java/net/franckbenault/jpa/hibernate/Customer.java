@@ -3,11 +3,18 @@ package net.franckbenault.jpa.hibernate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="DEV_CUSTOMER")
+@Table(name="DEV_CUSTOMER", 
+uniqueConstraints={
+        @UniqueConstraint(name="fullname", columnNames={"firstname", "lastname"})
+    })
 public class Customer {
 
+	public Customer() {
+	}
+	
 	public Customer(String firstname , String lastname) {
 		this.firstname = firstname;
 		this.lastname = lastname;
