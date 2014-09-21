@@ -8,6 +8,7 @@
 	<modules>
 		<module>mod01-hibernate</module>
 		<module>mod02-eclipselink</module>
+		<module>mod03-hibernate-tableconstraints</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
