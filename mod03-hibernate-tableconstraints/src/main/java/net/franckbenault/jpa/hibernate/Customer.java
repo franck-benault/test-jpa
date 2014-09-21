@@ -2,10 +2,18 @@ package net.franckbenault.jpa.hibernate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="DEV_CUSTOMER")
 public class Customer {
 
+	public Customer(String firstname , String lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
+	
+	
 	  @Id
 	  private long id = System.currentTimeMillis();
 

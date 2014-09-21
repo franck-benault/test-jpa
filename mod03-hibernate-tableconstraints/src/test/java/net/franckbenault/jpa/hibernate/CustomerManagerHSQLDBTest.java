@@ -30,7 +30,7 @@ public class CustomerManagerHSQLDBTest extends AbstractTester {
 	public void testCreateCustomers() throws ClassNotFoundException, SQLException {
 
 		int countBefore = countStudentsJDBC(DB_NAME);
-		customerManager.createCustomer(new Customer());
+		customerManager.createCustomer(new Customer("John", "Smith"));
 		int countAfter = countStudentsJDBC(DB_NAME);
 
 		assertEquals(countBefore + 1, countAfter);
