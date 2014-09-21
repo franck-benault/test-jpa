@@ -3,6 +3,7 @@ package net.franckbenault.jpa.hibernate;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -39,6 +40,10 @@ public class CustomerManagerDerbyTest extends AbstractTester  {
 		int countAfter = countStudentsJDBC(DB_NAME);
 
 		assertEquals(countBefore + 1, countAfter);
+		
+		List<String> constraints = countConstraints(DB_NAME);
+		assertTrue(constraints.size()>0);
+		//assertTrue(constraints.contains("fullname"));
 	}
 	
 

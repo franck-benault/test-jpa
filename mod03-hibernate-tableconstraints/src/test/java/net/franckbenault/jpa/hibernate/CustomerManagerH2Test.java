@@ -35,6 +35,10 @@ public class CustomerManagerH2Test extends AbstractTester {
 		int countAfter = countStudentsJDBC(DB_NAME);
 
 		assertEquals(countBefore + 1, countAfter);
+		
+		List<String> constraints = countConstraints(DB_NAME);
+		assertTrue(constraints.size()>0);
+		assertTrue(constraints.contains("fullname"));
 	}
 	
 	@Test
