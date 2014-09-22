@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.persistence.RollbackException;
 
 import net.franckbenault.jpa.hibernate.impl.CustomerManagerImpl;
 
