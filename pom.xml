@@ -10,6 +10,12 @@
 		<module>mod02-eclipselink</module>
 		<module>mod03-hibernate-tableconstraints</module>
 	</modules>
+	<properties>
+		<hibernate-version>4.3.6.Final</hibernate-version>
+		<!-- old version used at my office -->
+		<!-- hibernate-version>4.1.8.Final</hibernate-version-->
+		
+	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -36,13 +42,13 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
-				<version>4.3.6.Final</version>
+				<version>${hibernate-version}</version>
 			</dependency>
 			<!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
-				<version>4.3.6.Final</version>
+				<version>${hibernate-version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.eclipse.persistence</groupId>
