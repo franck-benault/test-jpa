@@ -7,9 +7,8 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="DEV_CUSTOMER", 
-uniqueConstraints={
-        @UniqueConstraint(name="fullname", columnNames={"firstname", "lastname"})
-    })
+uniqueConstraints=@UniqueConstraint(name="FULLNAME", columnNames={"firstname", "lastname"})
+   )
 public class Customer {
 
 	public Customer() {
