@@ -14,20 +14,23 @@ public class AbstractTester {
 	
 	private Connection getConnection(String databaseName) throws ClassNotFoundException, SQLException {
 		Connection conn =null;
+		
+		String url = XmlReader.getHibernateUrl(databaseName);
+		
 		if(databaseName.equals("hsqldb")) {
 			Class.forName("org.hsqldb.jdbcDriver");
-			conn = DriverManager.getConnection("jdbc:hsqldb:mem:testdb",
+			conn = DriverManager.getConnection(url,
 				"sa", "");
 		}
 		if(databaseName.equals("derby")) {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 			conn = DriverManager.
-			    getConnection("jdbc:derby:memory:testDB;create=true");
+			    getConnection(url);
 		}
 		if(databaseName.equals("h2")) {
 	        Class.forName("org.h2.Driver");
 	        conn = DriverManager.
-	            getConnection("jdbc:h2:mem:test;MODE=MYSQL", "sa", "");
+	            getConnection(url, "sa", "");
 		}
 		return conn;
 	}

@@ -49,6 +49,8 @@ public class CustomerManagerDerbyTest extends AbstractTester  {
 	@Test
 	public void testCreateCustomers_withException() throws ClassNotFoundException, SQLException {
 
+
+		
 		Customer c = customerManager.createCustomer(new Customer("William", "Smouth"));
 		assertNotNull(c);
 		c = customerManager.createCustomer(new Customer("William", "Smouth"));
