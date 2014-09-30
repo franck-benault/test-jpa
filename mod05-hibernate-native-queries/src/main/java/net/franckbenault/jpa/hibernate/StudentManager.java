@@ -7,4 +7,6 @@ public interface StudentManager {
 	
 	int countAllStudents();
 	
+	void deleteAllStudents();
+	
 }

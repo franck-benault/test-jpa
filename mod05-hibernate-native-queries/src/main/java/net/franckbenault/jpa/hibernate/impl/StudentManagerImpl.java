@@ -43,4 +43,10 @@ public class StudentManagerImpl implements StudentManager {
 	    }
 	    
 	}
+
+	@Override
+	public void deleteAllStudents() {
+		// TODO Auto-generated method stub
+		// TRUNCATE USE ?
+	}
 }
