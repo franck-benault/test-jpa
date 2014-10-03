@@ -8,5 +8,7 @@ public interface StudentManager {
 	int countAllStudents();
 	
 	int deleteAllStudents();
+
+	int deleteSnellAllStudents();
 	
 }

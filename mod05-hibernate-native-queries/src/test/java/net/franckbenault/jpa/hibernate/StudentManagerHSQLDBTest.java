@@ -54,4 +54,14 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 		int countAfter = countStudentsJDBC(DB_NAME);
 		assertEquals(countAfter, 0);
 	}
+	
+	@Test
+	public void testDeleteSnellAllStudents() throws ClassNotFoundException, SQLException {
+		
+		studentManager.createStudent(new Student());
+		
+		studentManager.deleteSnellAllStudents();
+		int countAfter = countStudentsJDBC(DB_NAME);
+		assertEquals(countAfter, 0);
+	}
 }

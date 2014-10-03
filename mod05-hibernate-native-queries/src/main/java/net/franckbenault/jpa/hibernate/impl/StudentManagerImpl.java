@@ -52,4 +52,13 @@ public class StudentManagerImpl implements StudentManager {
 	    em.getTransaction().commit();
 	    return res;
 	}
+	
+	@Override
+	public int deleteSnellAllStudents() {
+	    em.getTransaction().begin();
+	    int res = em.createNativeQuery(
+	            "truncate table Student").executeUpdate();
+	    em.getTransaction().commit();
+	    return res;
+	}
 }
