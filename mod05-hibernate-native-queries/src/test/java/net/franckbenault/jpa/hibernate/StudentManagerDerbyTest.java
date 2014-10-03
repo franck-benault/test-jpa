@@ -47,4 +47,13 @@ public class StudentManagerDerbyTest extends AbstractTester  {
 		assertEquals(nbStudents, countBefore);
 	}
 
+	@Test
+	public void testDeleteAllStudents() throws ClassNotFoundException, SQLException {
+		
+		studentManager.createStudent(new Student());
+		
+		studentManager.deleteAllStudents();
+		int countAfter = countStudentsJDBC(DB_NAME);
+		assertEquals(countAfter, 0);
+	}
 }

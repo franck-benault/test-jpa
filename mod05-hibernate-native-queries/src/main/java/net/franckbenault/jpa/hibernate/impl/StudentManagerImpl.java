@@ -45,8 +45,11 @@ public class StudentManagerImpl implements StudentManager {
 	}
 
 	@Override
-	public void deleteAllStudents() {
-		// TODO Auto-generated method stub
-		// TRUNCATE USE ?
+	public int deleteAllStudents() {
+	    em.getTransaction().begin();
+	    int res = em.createNativeQuery(
+	            "delete from Student").executeUpdate();
+	    em.getTransaction().commit();
+	    return res;
 	}
 }
