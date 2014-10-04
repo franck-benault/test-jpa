@@ -9,6 +9,6 @@ public interface StudentManager {
 	
 	int deleteAllStudents();
 
-	int deleteSnellAllStudents();
+	void deleteSnellAllStudents();
 	
 }
