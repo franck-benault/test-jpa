@@ -43,6 +43,21 @@ public class StudentManagerImpl implements StudentManager {
 	    }
 	    
 	}
+	
+	@Override
+	public int countSnellAllStudents() {
+		
+	    Object res = em.createNativeQuery(
+	            "select count(1) from Student s").getSingleResult();
+	    if(res instanceof BigInteger) {
+	    	BigInteger res2 = (BigInteger) res;
+	    	return res2.intValue();
+	    } else {
+	    	Integer res2 = (Integer) res;
+	    	return res2.intValue();	
+	    }
+	    
+	}
 
 	@Override
 	public int deleteAllStudents() {

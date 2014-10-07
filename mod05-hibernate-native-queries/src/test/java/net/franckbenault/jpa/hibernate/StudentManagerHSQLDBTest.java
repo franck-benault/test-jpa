@@ -92,4 +92,24 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 		System.out.println((duration2-duration1)/1000000);
 		assertTrue(duration2>duration1);
 	}
+	
+	@Test
+	public void CountAllStudentsCompareTime() throws ClassNotFoundException, SQLException {
+		
+		createStudents();
+		
+		long before = System.nanoTime();
+		int res1 = studentManager.countSnellAllStudents();
+		long after = System.nanoTime();
+		long duration1 = after-before;
+		
+		before = System.nanoTime();
+		int res2 = studentManager.deleteAllStudents();
+		after = System.nanoTime();
+		long duration2 = after-before;
+		
+		System.out.println((duration2-duration1)/1000000);
+		assertEquals(res1,res2);
+		assertTrue(duration2>duration1);
+	}
 }

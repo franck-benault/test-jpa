@@ -65,7 +65,7 @@ public class StudentManagerH2Test extends AbstractTester {
 	}
 
 	private void createStudents() {
-		for(int i=0 ; i<100 ; i++) {
+		for(int i=0 ; i<1000 ; i++) {
 			studentManager.createStudent(new Student());			
 		}
 	}
@@ -88,6 +88,26 @@ public class StudentManagerH2Test extends AbstractTester {
 		long duration2 = after-before;
 		
 		System.out.println((duration2-duration1)/1000000);
+		assertTrue(duration2>duration1);
+	}
+	
+	@Test
+	public void CountAllStudentsCompareTime() throws ClassNotFoundException, SQLException {
+		
+		createStudents();
+		
+		long before = System.nanoTime();
+		int res1 = studentManager.countSnellAllStudents();
+		long after = System.nanoTime();
+		long duration1 = after-before;
+		
+		before = System.nanoTime();
+		int res2 = studentManager.deleteAllStudents();
+		after = System.nanoTime();
+		long duration2 = after-before;
+		
+		System.out.println((duration2-duration1)/1000000);
+		assertEquals(res1,res2);
 		assertTrue(duration2>duration1);
 	}
 
