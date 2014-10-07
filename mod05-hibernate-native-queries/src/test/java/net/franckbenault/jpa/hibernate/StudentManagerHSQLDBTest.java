@@ -65,4 +65,31 @@ public class StudentManagerHSQLDBTest extends AbstractTester {
 		int countAfter = countStudentsJDBC(DB_NAME);
 		assertEquals(countAfter, 0);
 	}
+	
+	private void createStudents() {
+		for(int i=0 ; i<100 ; i++) {
+			studentManager.createStudent(new Student());			
+		}
+	}
+	
+	@Test
+	public void testDeleteAllStudentsCompareTime() throws ClassNotFoundException, SQLException {
+		
+		createStudents();
+		
+		long before = System.nanoTime();
+		studentManager.deleteSnellAllStudents();
+		long after = System.nanoTime();
+		long duration1 = after-before;
+		
+		createStudents();
+		
+		before = System.nanoTime();
+		studentManager.deleteAllStudents();
+		after = System.nanoTime();
+		long duration2 = after-before;
+		
+		System.out.println((duration2-duration1)/1000000);
+		assertTrue(duration2>duration1);
+	}
 }

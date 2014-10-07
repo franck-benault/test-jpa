@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 @Entity
 public class Student {
   @Id
-  private long id = System.currentTimeMillis();
+  private long id = System.nanoTime();
 
   //the annotation basic is not needed for Hibernate and EclipseLink
   //@Basic
