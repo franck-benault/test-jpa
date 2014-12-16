@@ -10,6 +10,7 @@
 		<module>mod02-eclipselink</module>
 		<module>mod03-hibernate-tableconstraints</module>
 		<module>mod05-hibernate-native-queries</module>
+		<module>mod06-jpa-issues</module>
 	</modules>
 	<properties>
 		<hibernate-version>4.3.6.Final</hibernate-version>
