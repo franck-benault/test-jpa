@@ -9,4 +9,12 @@ public class Person {
 	@Id
 	public String fullname;
 
+	
+	public Person() {
+		
+	}
+	
+	public Person(String fullname) {
+		this.fullname = fullname;
+	}
 }

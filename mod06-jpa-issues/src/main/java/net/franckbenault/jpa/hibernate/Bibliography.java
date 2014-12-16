@@ -18,4 +18,12 @@ public class Bibliography {
 	@OneToOne
 	public Person person;
 	
+	public Bibliography() {
+		
+	}
+	
+	public Bibliography(String reference, Person person) {
+		this.reference= reference;
+		this.person = person;
+	}
 }
